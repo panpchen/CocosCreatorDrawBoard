@@ -110,8 +110,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 1024,
-      "height": 640
+      "width": 800,
+      "height": 1280
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -122,8 +122,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        512,
-        320,
+        400,
+        640,
         0,
         0,
         0,
@@ -186,7 +186,7 @@
       "array": [
         0,
         0,
-        499.69665798362115,
+        349.0082377251288,
         0,
         0,
         0,
@@ -247,8 +247,8 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "New Sprite(Splash)",
-    "_objFlags": 0,
+    "_name": "bg",
+    "_objFlags": 512,
     "_parent": {
       "__id__": 2
     },
@@ -263,15 +263,15 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
+      "r": 133,
+      "g": 101,
+      "b": 101,
       "a": 255
     },
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 800,
-      "height": 640
+      "height": 1280
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -361,7 +361,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 800,
-      "height": 640
+      "height": 1280
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -438,8 +438,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        458.688,
-        278.549,
+        330.764,
+        596.998,
         0,
         0,
         0,
@@ -607,7 +607,8 @@
         "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
       }
     ],
-    "_useOriginalSize": false,
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
     "_string": "画笔",
     "_N$string": "画笔",
     "_fontSize": 20,
@@ -822,8 +823,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        459.393,
-        209,
+        331.469,
+        527.449,
         0,
         0,
         0,
@@ -991,7 +992,8 @@
         "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
       }
     ],
-    "_useOriginalSize": false,
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
     "_string": "橡皮擦",
     "_N$string": "橡皮擦",
     "_fontSize": 20,
@@ -1206,8 +1208,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        459.393,
-        144.642,
+        331.469,
+        463.091,
         0,
         0,
         0,
@@ -1375,7 +1377,8 @@
         "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
       }
     ],
-    "_useOriginalSize": false,
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
     "_string": "清空",
     "_N$string": "清空",
     "_fontSize": 20,
@@ -1559,11 +1562,11 @@
     "_enabled": true,
     "_designResolution": {
       "__type__": "cc.Size",
-      "width": 1024,
-      "height": 640
+      "width": 800,
+      "height": 1280
     },
     "_fitWidth": true,
-    "_fitHeight": false,
+    "_fitHeight": true,
     "_id": "d2O3TER/NG/63nrhiD4mPB"
   },
   {
