@@ -14,20 +14,10 @@ const { ccclass, property } = cc._decorator;
 
 @ccclass
 export default class NewClass extends cc.Component {
-  @property(cc.Label)
-  label: cc.Label = null;
-
-  @property
-  text: string = "hello";
-
   @property(cc.Node)
   board: cc.Node = null;
 
   private drawManager: DrawManager;
-
-  // LIFE-CYCLE CALLBACKS:
-
-  // onLoad () {}
 
   start() {
     this.drawManager = new DrawManager();
