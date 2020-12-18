@@ -1,63 +1,72 @@
+const { default: Game } = require("./Game");
 const { SendMsg } = require("./SendMsg");
 
 cc.Class({
   extends: cc.Component,
   properties: {
-    game: null,
+    _game: null,
+    _base64: -1,
   },
   init(game) {
-    this.game = game;
+    this._game = game;
   },
-  screenShot() {
-    this.game.showTopBtnLayer(false);
-
+  onScreenShot(callback) {
     cc.director.once(cc.Director.EVENT_AFTER_DRAW, () => {
-      let canvas = document.getElementById("GameCanvas");
-      let str = canvas.toDataURL();
-      let div = document.createElement("div");
-      let img = new Image();
-      div.style.position = "absolute";
-      div.setAttribute("z-index", "90");
-      img.src = str;
-      div.appendChild(img);
+      const canvas = document.getElementById("GameCanvas");
+      const base64 = canvas.toDataURL();
+      this._base64 = base64;
 
-      const data = str.replace(/^data:image[^;]*/, "data:image/octet-stream");
-      const save_link = document.createElementNS(
-        "http://www.w3.org/1999/xhtml",
-        "a"
-      );
-      save_link.href = data;
-      save_link.download = `downloadFile.png`;
+      const img = new Image();
+      img.src = base64;
 
-      const evt = new MouseEvent("click", {
-        bubbles: false,
-        cancelable: true,
-        view: window,
-      });
-      if (save_link.dispatchEvent(evt)) {
-        this.game.showTopBtnLayer(true);
-      }
+      const texture2d = new cc.Texture2D();
+      texture2d.initWithElement(img);
+
+      const spriteFrame = new cc.SpriteFrame();
+      spriteFrame.setTexture(texture2d);
+
+      callback && callback(spriteFrame);
     });
   },
+  _downloadFileToLocal() {
+    const save_link = document.createElementNS(
+      "http://www.w3.org/1999/xhtml",
+      "a"
+    );
+    save_link.href = this._base64.replace(
+      /^data:image[^;]*/,
+      "data:image/octet-stream"
+    );
+    save_link.download = `downloadFile.png`;
 
+    const evt = new MouseEvent("click", {
+      bubbles: false,
+      cancelable: true,
+      view: window,
+    });
+    save_link.dispatchEvent(evt);
+  },
   onUpload() {
+    this._downloadFileToLocal();
+
     let input = document.createElement("input");
     input.type = "file";
     input.id = "file";
+    input.style.visibility = "hidden";
+    document.body.appendChild(input);
+
     const evt = new MouseEvent("click", {
       bubbles: false,
       cancelable: true,
       view: window,
     });
     input.dispatchEvent(evt);
+
     input.onchange = (event) => {
       const file = input.files[0];
       SendMsg.uploadFile(file);
+      SendMsg.reqSaveAssessStatistics(Game.AssessStatisticsJson);
       cc.error("open file window", file);
     };
-
-    input.style.visibility = "hidden";
-    input.setAttribute("z-index", "90");
-    document.body.appendChild(input);
   },
 });

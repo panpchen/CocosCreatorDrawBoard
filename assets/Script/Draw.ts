@@ -40,6 +40,4 @@ export default class NewClass extends cc.Component {
     this.drawManager.setLineWidth(10);
     this.drawManager.setStrokeColor(new cc.Color(200, 0, 200, 255));
   }
-
-  // update (dt) {}
 }
