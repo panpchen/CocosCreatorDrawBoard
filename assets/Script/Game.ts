@@ -23,6 +23,9 @@ export default class Game extends cc.Component {
   }
   public static AssessStatisticsJson = null;
   onLoad() {
+    // 关闭多点触控
+    cc.macro.ENABLE_MULTI_TOUCH = false;
+
     this._screenshot = this.screenShotNode.getComponent("Screenshot");
     this._screenshot.init(this);
 
