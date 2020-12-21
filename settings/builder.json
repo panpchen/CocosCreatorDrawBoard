@@ -1,5 +1,5 @@
 {
-  "title": "TestDraw",
+  "title": "Draw",
   "packageName": "",
   "startScene": "bd23a38c-6af8-493d-a85e-1fe299db4470",
   "excludeScenes": [],
@@ -10,7 +10,7 @@
     "portrait": false,
     "upsideDown": false
   },
-  "webOrientation": "auto",
+  "webOrientation": "portrait",
   "inlineSpriteFrames": true,
   "inlineSpriteFrames_native": true,
   "mergeStartScene": false,
@@ -21,15 +21,24 @@
   "zipCompressJs": true,
   "fb-instant-games": {},
   "android": {
+    "REMOTE_SERVER_ROOT": "",
     "packageName": ""
   },
   "ios": {
+    "REMOTE_SERVER_ROOT": "",
     "packageName": ""
   },
   "mac": {
-    "packageName": ""
+    "REMOTE_SERVER_ROOT": "",
+    "height": 720,
+    "packageName": "",
+    "width": 1280
   },
-  "win32": {},
+  "win32": {
+    "REMOTE_SERVER_ROOT": "",
+    "height": 720,
+    "width": 1280
+  },
   "android-instant": {
     "REMOTE_SERVER_ROOT": "http://192.168.89.55:7456/preview-android-instant/",
     "host": "",
@@ -40,5 +49,8 @@
     "skipRecord": false
   },
   "appBundle": false,
-  "includeAnySDK": false
+  "includeAnySDK": false,
+  "mainCompressionType": "default",
+  "mainIsRemote": false,
+  "nativeMd5Cache": true
 }

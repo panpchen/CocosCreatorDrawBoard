@@ -32,11 +32,11 @@ export class NetManager {
     });
     xhr.addEventListener("error", (evt) => {
       cc.error(evt);
-      errorCallback && errorCallback();
+      errorCallback && errorCallback(evt);
     });
     xhr.addEventListener("timeout", (evt) => {
       cc.error(evt);
-      errorCallback && errorCallback();
+      errorCallback && errorCallback(evt);
     });
     // xhr.addEventListener("abort", (evt) => {
     //     cc.error(evt);

@@ -29,9 +29,12 @@ export class SendMsg {
       data,
       (response) => {
         callback && callback(data);
+        // alert("玩家数据已上传");
       },
-      () => {
-        errorCallback && errorCallback();
+      (err) => {
+        errorCallback && errorCallback(err);
+        cc.error("玩家数据上传失败");
+        alert(`玩家数据上传失败${err}`);
       }
     );
   }
@@ -46,10 +49,12 @@ export class SendMsg {
       "POST",
       formData,
       () => {
+        // alert("上传成功");
         cc.log("upload success");
       },
-      () => {
+      (err) => {
         cc.error("upload fail");
+        alert(`上传失败: ${err}`);
       }
     );
   }

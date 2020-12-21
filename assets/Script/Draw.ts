@@ -16,6 +16,10 @@ const { ccclass, property } = cc._decorator;
 export default class NewClass extends cc.Component {
   @property(cc.Node)
   board: cc.Node = null;
+  @property
+  penWidth: number = 10;
+  @property
+  rubberWidth: number = 10;
 
   private drawManager: DrawManager;
 
@@ -31,13 +35,13 @@ export default class NewClass extends cc.Component {
       this.drawManager.setStrokeColor(new cc.Color(0, 0, 0, 0));
       this.drawManager.clear();
     } else {
-      this.drawManager.setLineWidth(10);
+      this.drawManager.setLineWidth(this.rubberWidth);
       this.drawManager.setStrokeColor(new cc.Color(0, 0, 0, 0));
     }
   }
 
   onPen() {
-    this.drawManager.setLineWidth(10);
+    this.drawManager.setLineWidth(this.penWidth);
     this.drawManager.setStrokeColor(new cc.Color(200, 0, 200, 255));
   }
 }

@@ -27,7 +27,6 @@ export default class Game extends cc.Component {
     cc.macro.ENABLE_MULTI_TOUCH = false;
 
     this._screenshot = this.screenShotNode.getComponent("Screenshot");
-    this._screenshot.init(this);
 
     this.shareUI.node.active = false;
     this.shareUI.init(this);
@@ -63,8 +62,8 @@ export default class Game extends cc.Component {
   showShareUI() {
     if (this._screenshot) {
       this.showTopBtnLayer(false);
-      this._screenshot.onScreenShot((shotFrame) => {
-        this.shareUI.showShotBg(shotFrame);
+      this._screenshot.onScreenShot((base64, shotFrame) => {
+        this.shareUI.showShotBg(base64, shotFrame);
         this.showTopBtnLayer(true);
         this.shareUI.node.active = true;
       });
