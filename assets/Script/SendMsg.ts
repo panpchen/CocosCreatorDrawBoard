@@ -27,19 +27,12 @@ export class SendMsg {
       URL_LIST.SaveAssessStatistics,
       "POST",
       data,
-      (response) => {
-        callback && callback(data);
-        // alert("玩家数据已上传");
-      },
-      (err) => {
-        errorCallback && errorCallback(err);
-        cc.error("玩家数据上传失败");
-        alert(`玩家数据上传失败${err}`);
-      }
+      callback,
+      errorCallback
     );
   }
 
-  static uploadFile(file: File) {
+  static uploadFile(file: File, callback, errorCallback) {
     const formData = new FormData();
     formData.append("files", file);
     formData.append("resourceTypeId", "1298506077913186304");
@@ -48,14 +41,8 @@ export class SendMsg {
       URL_LIST.ServerFilePath,
       "POST",
       formData,
-      () => {
-        // alert("上传成功");
-        cc.log("upload success");
-      },
-      (err) => {
-        cc.error("upload fail");
-        alert(`上传失败: ${err}`);
-      }
+      callback,
+      errorCallback
     );
   }
 }

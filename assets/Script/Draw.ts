@@ -20,28 +20,45 @@ export default class NewClass extends cc.Component {
   penWidth: number = 10;
   @property
   rubberWidth: number = 10;
+  @property([cc.Node])
+  btns: cc.Node[] = [];
 
   private drawManager: DrawManager;
-
   start() {
     this.drawManager = new DrawManager();
     this.drawManager.init(this.board);
-    this.onPen();
+    this._usePen();
     this.node.addChild(this.drawManager.drawNode);
   }
 
-  onEraser(e, str) {
-    if (str === "clear") {
-      this.drawManager.setStrokeColor(new cc.Color(0, 0, 0, 0));
-      this.drawManager.clear();
-    } else {
-      this.drawManager.setLineWidth(this.rubberWidth);
-      this.drawManager.setStrokeColor(new cc.Color(0, 0, 0, 0));
+  onClickBottom(evt, parm) {
+    this.btns.forEach((node) => {
+      node.y = -615;
+    });
+
+    switch (parm) {
+      case "pen":
+        this._usePen();
+        break;
+      case "rubber":
+        this._useRubber();
+        break;
+      case "clear":
+        this.drawManager.clear();
+        this._usePen();
+        break;
     }
   }
 
-  onPen() {
+  _usePen() {
     this.drawManager.setLineWidth(this.penWidth);
     this.drawManager.setStrokeColor(new cc.Color(200, 0, 200, 255));
+    this.btns[0].y = -570;
+  }
+
+  _useRubber() {
+    this.drawManager.setLineWidth(this.rubberWidth);
+    this.drawManager.setStrokeColor(new cc.Color(0, 0, 0, 0));
+    this.btns[1].y = -570;
   }
 }

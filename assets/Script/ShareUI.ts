@@ -52,10 +52,28 @@ export default class ShareUI extends cc.Component {
 
     input.onchange = (event) => {
       const file = input.files[0];
-      SendMsg.uploadFile(file);
-      SendMsg.reqSaveAssessStatistics(Game.AssessStatisticsJson);
+      SendMsg.uploadFile(
+        file,
+        () => {
+          cc.log("上传成功");
+          alert("上传成功");
+        },
+        (err) => {
+          cc.error("上传失败", err);
+          alert(`上传失败${err}`);
+        }
+      );
+      SendMsg.reqSaveAssessStatistics(
+        Game.AssessStatisticsJson,
+        () => {
+          cc.log("玩家数据已上传");
+        },
+        (err) => {
+          cc.error("玩家数据上传失败", err);
+        }
+      );
       this.hide();
-      cc.error("open file", file);
+      // cc.error("open file", file);
     };
   }
 
