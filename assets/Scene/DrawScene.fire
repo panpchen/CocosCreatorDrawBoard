@@ -714,7 +714,7 @@
       "__id__": 13
     },
     "_children": [],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 15
@@ -747,7 +747,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        3.299999999999997,
+        3.3000000000000043,
         0,
         0,
         0,
@@ -820,7 +820,7 @@
     "_left": 50.50000000000002,
     "_right": 50.49999999999995,
     "_top": 9.960000000000004,
-    "_bottom": 16.560000000000006,
+    "_bottom": 16.56000000000001,
     "_verticalCenter": 0,
     "_horizontalCenter": 0,
     "_isAbsLeft": true,
@@ -841,7 +841,7 @@
       "__id__": 13
     },
     "_children": [],
-    "_active": false,
+    "_active": true,
     "_components": [
       {
         "__id__": 18
@@ -862,7 +862,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 569,
-      "height": 108.47999999999999
+      "height": 123.88
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -874,7 +874,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        3.299999999999997,
+        5.5,
         0,
         0,
         0,
@@ -913,10 +913,10 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "生命来之不易，异常珍贵，结合本堂课的体验，你想对自己说什么？",
-    "_N$string": "生命来之不易，异常珍贵，结合本堂课的体验，你想对自己说什么？",
+    "_string": "现在你们相互之间都看到了自己和他人眼中的“我”，你觉得自己的最特别的地方在哪里呢？",
+    "_N$string": "现在你们相互之间都看到了自己和他人眼中的“我”，你觉得自己的最特别的地方在哪里呢？",
     "_fontSize": 30,
-    "_lineHeight": 48,
+    "_lineHeight": 38,
     "_enableWrapText": true,
     "_N$file": {
       "__uuid__": "1f62f48f-4a12-41bd-bd16-1092f00b8f48"
@@ -946,8 +946,8 @@
     "_alignFlags": 45,
     "_left": 50.50000000000002,
     "_right": 50.49999999999995,
-    "_top": 9.960000000000004,
-    "_bottom": 16.560000000000006,
+    "_top": 0.05999999999999872,
+    "_bottom": 11.060000000000002,
     "_verticalCenter": 0,
     "_horizontalCenter": 0,
     "_isAbsLeft": true,
@@ -1001,7 +1001,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        3.299999999999997,
+        5,
         0,
         0,
         0,
@@ -1040,8 +1040,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "每个生命的的诞生都是来之不易的，每个生命也是脆弱的。对此，你有什么感想？",
-    "_N$string": "每个生命的的诞生都是来之不易的，每个生命也是脆弱的。对此，你有什么感想？",
+    "_string": "生命来之不易，异常珍贵，结合本堂课的体验，你想对自己说什么？",
+    "_N$string": "生命来之不易，异常珍贵，结合本堂课的体验，你想对自己说什么？",
     "_fontSize": 30,
     "_lineHeight": 48,
     "_enableWrapText": true,
@@ -1073,8 +1073,8 @@
     "_alignFlags": 45,
     "_left": 50.50000000000002,
     "_right": 50.49999999999995,
-    "_top": 9.960000000000004,
-    "_bottom": 16.560000000000006,
+    "_top": 8.260000000000002,
+    "_bottom": 18.26000000000001,
     "_verticalCenter": 0,
     "_horizontalCenter": 0,
     "_isAbsLeft": true,
